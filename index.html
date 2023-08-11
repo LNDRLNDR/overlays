@@ -22,14 +22,14 @@
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GPS2BDRQ8"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+      function gtag() {
+        dataLayer.push(arguments);
+      }
 
-        gtag('js', new Date());
-        gtag('config', 'G-7GPS2BDRQ8');
+      gtag('js', new Date());
+      gtag('config', 'G-7GPS2BDRQ8');
     </script>
 
 
@@ -84,24 +84,114 @@
             opacity: 1;
         }
 
-        #nav {
+        header ul, footer {
             width: 100%;
+            background-color: black;
+            font-size: 22px;
+            min-height: 84px;
+            margin: 0;
+            align-items: center;
         }
 
+        footer ul li {
+            color: white;
+            font-size: 20px;
+            margin-left: 15px;
+        }
 
+        footer ul li a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        header ul, footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        header li {
+            padding-left: 25px;
+            padding-right: 25px;
+            height: 40px;
+        }
+
+        header li a {
+            display: block;
+            /*padding: 14px 25px 10px 25px;*/
+            text-transform: uppercase;
+            color: #6696fe !important;
+            text-decoration: none !important;
+            font-size: 24px;
+            /*margin: 20px;*/
+            font-weight: 300;
+            transition: all .25s;
+            border-bottom: 3px solid transparent;
+        }
+
+        header li.active a {
+            display: block;
+            /*padding: 14px 25px 10px 25px;*/
+            text-transform: uppercase;
+            color: #f44336 !important;
+            text-decoration: none !important;
+            font-size: 24px;
+            /*margin: 20px;*/
+            font-weight: 300;
+            transition: all .25s;
+            border-bottom: 3px solid #f44336;
+        }
+
+        header li a:hover {
+            display: block;
+            /*padding: 14px 25px 10px 25px;*/
+            text-transform: uppercase;
+            color: #f8982d !important;
+            text-decoration: none !important;
+            font-size: 24px;
+            /*margin: 20px;*/
+            font-weight: 300;
+            transition: all .25s;
+            border-bottom: 3px solid #f8982d;
+        }
     </style>
 </head>
 <body>
 <header>
-    <nav id="nav">
-        <ul>
-            <li><a href="#tweets">Tweets</a></li>
-            <li><a href="#clients">Clients</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#info">Info</a></li>
-        </ul>
-    </nav>
+    <ul>
+        <li title="CARL: Analysis Tool for Rocket League">
+            <a href="https://lndrlndr.github.io/">CARL</a>
+        </li>
+        <li title="BARL: Broadcast Assistant for Rocket League">
+            <a href="https://lndrlndr.github.io/BARL-Overlay/">BARL</a>
+        </li>
+        <li title="Overlay Portfolio">
+            <a href="https://lndrlndr.github.io/portfolio/">OVERLAYS</a>
+        </li>
+        <!--        <li><a href="https://lndrlndr.github.io/overlays/">CLIENTS</a></li>-->
+        <li title="Check out my Twitter">
+            <a target="_blank" href="https://x.com/LNDRLNDRLNDR">TWITTER</a>
+        </li>
+        <li title="Send me an Email">
+            <a target="_blank" href="mailto:lndr.overlays@gmail.com">EMAIL</a>
+        </li>
+        <li title="Join the BARL Discord server">
+            <a target="_blank" href="https://discord.gg/qF5FkJxNdR">DISCORD</a>
+        </li>
+    </ul>
 </header>
+
+
+<!--<header>-->
+<!--    <nav id="nav">-->
+<!--        <ul>-->
+<!--            <li><a href="#tweets">Tweets</a></li>-->
+<!--            <li><a href="#clients">Clients</a></li>-->
+<!--            <li><a href="#contact">Contact</a></li>-->
+<!--            <li><a href="#info">Info</a></li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+<!--</header>-->
 <main>
     <h1>Rocket League Dynamic Broadcasting Overlay</h1>
     <section id="tweets">
@@ -110,11 +200,10 @@
         <h2>Tweets</h2>
         <div class="video_box">
             <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Rocket League Dynamic Overlays: The ultimate tool
-                for
-                easy &amp; professional broadcasting. <br><br>Custom made to fit your brand. <br>Easy to use, so you can
-                focus on what really matters: the game-play.<br><br>Real-time updatable in-game HUD, advanced post game
-                stats &amp; more. <br><br>Discord: lndrlndrlndr <a
-                        href="https://t.co/2mgx9cZUed">pic.twitter.com/2mgx9cZUed</a></p>&mdash; LNDR (@LNDRLNDRLNDR) <a
+                for easy and professional broadcasting. <br><br>Custom made to fit your brand. <br>Easy to use, so you
+                can focus on what really matters: the game-play.<br><br>Real-time updatable in-game HUD, advanced post
+                game stats &amp; more. <br><br>Discord: lndrlndrlndr
+                <a href="https://t.co/2mgx9cZUed">pic.twitter.com/2mgx9cZUed</a></p>&mdash; LNDR (@LNDRLNDRLNDR) <a
                     href="https://twitter.com/LNDRLNDRLNDR/status/1625923082643701776?ref_src=twsrc%5Etfw">February 15,
                 2023</a>
             </blockquote>
@@ -310,24 +399,25 @@
                     href="https://twitter.com/Croptopolis/status/1625924193513775106?ref_src=twsrc%5Etfw">February 15,
                 2023</a>
             </blockquote>
-            
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">We are very excited to show off our new overlay 
+
+            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">We are very excited to show off our new overlay
                 tomorrow! Huge huge shoutout to <a href="https://twitter.com/LNDRLNDRLNDR?ref_src=twsrc%5Etfw">@LNDRLNDRLNDR</a>
-                for this one! It come out amazing! <a href="https://t.co/fbnSbVH2fn">https://t.co/fbnSbVH2fn</a></p>&mdash; 
-                LVC Esports (@LVC_esports) <a href="https://twitter.com/LVC_esports/status/1626292092459778049?ref_src=twsrc%5Etfw">
-                February 16, 2023</a>
+                for this one! It come out amazing! <a href="https://t.co/fbnSbVH2fn">https://t.co/fbnSbVH2fn</a></p>&mdash;
+                LVC Esports (@LVC_esports) <a
+                        href="https://twitter.com/LVC_esports/status/1626292092459778049?ref_src=twsrc%5Etfw">
+                    February 16, 2023</a>
             </blockquote>
 
         </div>
     </section>
-    <section id="contact">
-        <!-- Add contact content here -->
+<!--    <section id="contact">-->
+<!--        &lt;!&ndash; Add contact content here &ndash;&gt;-->
 
-        <h2>Contact information</h2>
-        <p>Discord: lndrlndrlndr</p>
-        <p>Twitter: @LNDRLNDRLNDR</p>
-        <p>Mail: lndr.overlays@gmail.com</p>
-    </section>
+<!--        <h2>Contact information</h2>-->
+<!--        <p>Discord: lndrlndrlndr</p>-->
+<!--        <p>Twitter: @LNDRLNDRLNDR</p>-->
+<!--        <p>Mail: lndr.overlays@gmail.com</p>-->
+<!--    </section>-->
     <section id="info">
         <!-- Add info content here -->
 
@@ -364,32 +454,48 @@
     </section>
 
     <div style="height: 35px;"></div>
+
 </main>
 <a id="scroll-to-top" href="#" class="btn-floating btn-large waves-effect waves-light red">
     <i class="material-icons">arrow_upward</i>
 </a>
+
+<footer>
+    <ul>
+        Contact:
+        <li title="Follow me on Twitter">
+            Twitter: <a target="_blank" href="https://x.com/LNDRLNDRLNDR">@LNDRLNDRLNDR</a>
+        </li>
+        <li title="Send me an Email">
+            Email: <a target="_blank" href="mailto:lndr.overlays@gmail.com">lndr.overlays@gmail.com</a>
+        </li>
+        <li title="Talk to me on Discord">
+            Discord: <a target="_blank" href="https://discord.gg/qF5FkJxNdR">lndrlndrlndr</a>
+        </li>
+    </ul>
+</footer>
 <!-- Add JavaScript file here -->
 <script>
-    const scrollToTopButton = document.querySelector('#scroll-to-top');
+  const scrollToTopButton = document.querySelector('#scroll-to-top');
 
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        const main = document.querySelector('main');
-        const mainPosition = main.offsetTop;
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    const main = document.querySelector('main');
+    const mainPosition = main.offsetTop;
 
-        if (currentScroll > mainPosition) {
-            scrollToTopButton.classList.add('show');
-        } else {
-            scrollToTopButton.classList.remove('show');
-        }
+    if (currentScroll > mainPosition) {
+      scrollToTopButton.classList.add('show');
+    } else {
+      scrollToTopButton.classList.remove('show');
+    }
+  });
+
+  scrollToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
-
-    scrollToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
+  });
 
 </script>
 </body>
