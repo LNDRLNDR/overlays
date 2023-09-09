@@ -1,198 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Rocket League Dynamic Broadcasting Overlay</title>
-    <meta name="author" content="LNDRLNDRLNDR">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Rocket League Dynamic Broadcasting Overlay</title>
+  <meta name="author" content="LNDRLNDRLNDR">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description"
-          content="Rocket League Dynamic Overlay HUD is the ultimate tool for broadcasters and casters.">
-    <meta name="keywords"
-          content="Rocket League, esports, overlay, hud, broadcasting, casters, stream, twitch, gaming.">
+  <meta name="description"
+        content="Rocket League Dynamic Overlay HUD is the ultimate tool for broadcasters and casters.">
+  <meta name="keywords"
+        content="Rocket League, esports, overlay, hud, broadcasting, casters, stream, twitch, gaming.">
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="icon.png">
-    <link rel="apple-touch-icon" href="icon.png"/>
-
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GPS2BDRQ8"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-
-      gtag('js', new Date());
-      gtag('config', 'G-7GPS2BDRQ8');
-    </script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png"/>
 
 
-    <style>
-        html, body {
-            height: 100%;
-            width: 100%;
-            background: transparent;
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GPS2BDRQ8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-        html {
-            background: linear-gradient(to right, #182848, #4b6cb7, #182848);
-        }
+    function gtag() {
+      dataLayer.push(arguments);
+    }
 
-        main {
-            padding-left: 50px;
-            padding-right: 50px;
-        }
+    gtag('js', new Date());
+    gtag('config', 'G-7GPS2BDRQ8');
+  </script>
 
-        h1 {
-            font-weight: 900;
-            margin-bottom: 0;
-            text-align: center;
-            font-size: 36px;
-        }
 
-        .video_box {
-            margin-top: 35px;
-            margin-bottom: 35px;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
+  <style>
+    html, body {
+      height: 100%;
+      width: 100%;
+      background: transparent;
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
 
-        .video_box blockquote {
-            width: 350px;
-        }
+    html {
+      background: linear-gradient(to right, #182848, #4b6cb7, #182848);
+    }
 
-        #scroll-to-top {
-            position: fixed;
-            bottom: 1rem;
-            right: 1rem;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
+    main {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
 
-        #scroll-to-top.show {
-            opacity: 1;
-        }
+    h1 {
+      font-weight: 900;
+      margin-bottom: 0;
+      text-align: center;
+      font-size: 36px;
+    }
 
-        header ul, footer {
-            width: 100%;
-            background-color: black;
-            font-size: 22px;
-            min-height: 84px;
-            margin: 0;
-            align-items: center;
-        }
+    .video_box {
+      margin-top: 35px;
+      margin-bottom: 35px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
 
-        footer ul li {
-            color: white;
-            font-size: 20px;
-            margin-left: 15px;
-        }
+    .video_box blockquote {
+      width: 350px;
+    }
 
-        footer ul li a {
-            color: white;
-            text-decoration: underline;
-        }
+    #scroll-to-top {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
 
-        header ul, footer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            row-gap: 30px;
-        }
-        .video_box iframe{
-            width: min(90%, 560px);
-            height: 315px;
-        }
+    #scroll-to-top.show {
+      opacity: 1;
+    }
 
-        header li {
-            padding-left: 25px;
-            padding-right: 25px;
-            height: 40px;
-        }
+    header ul, footer {
+      width: 100%;
+      background-color: black;
+      font-size: 22px;
+      min-height: 84px;
+      margin: 0;
+      align-items: center;
+    }
 
-        header li a {
-            display: block;
-            /*padding: 14px 25px 10px 25px;*/
-            text-transform: uppercase;
-            color: #6696fe !important;
-            text-decoration: none !important;
-            font-size: 24px;
-            /*margin: 20px;*/
-            font-weight: 300;
-            transition: all .25s;
-            border-bottom: 3px solid transparent;
-        }
+    footer ul li {
+      color: white;
+      font-size: 20px;
+      margin-left: 15px;
+    }
 
-        header li.active a {
-            display: block;
-            /*padding: 14px 25px 10px 25px;*/
-            text-transform: uppercase;
-            color: #f44336 !important;
-            text-decoration: none !important;
-            font-size: 24px;
-            /*margin: 20px;*/
-            font-weight: 300;
-            transition: all .25s;
-            border-bottom: 3px solid #f44336;
-        }
+    footer ul li a {
+      color: white;
+      text-decoration: underline;
+    }
 
-        header li a:hover {
-            display: block;
-            /*padding: 14px 25px 10px 25px;*/
-            text-transform: uppercase;
-            color: #f8982d !important;
-            text-decoration: none !important;
-            font-size: 24px;
-            /*margin: 20px;*/
-            font-weight: 300;
-            transition: all .25s;
-            border-bottom: 3px solid #f8982d;
-        }
-    </style>
+    header ul, footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 30px;
+    }
+    .video_box iframe{
+      width: min(90%, 560px);
+      height: 315px;
+    }
+
+    header li {
+      padding-left: 25px;
+      padding-right: 25px;
+      height: 40px;
+    }
+
+    header li a {
+      display: block;
+      /*padding: 14px 25px 10px 25px;*/
+      text-transform: uppercase;
+      color: #6696fe !important;
+      text-decoration: none !important;
+      font-size: 24px;
+      /*margin: 20px;*/
+      font-weight: 300;
+      transition: all .25s;
+      border-bottom: 3px solid transparent;
+    }
+
+    header li.active a {
+      display: block;
+      /*padding: 14px 25px 10px 25px;*/
+      text-transform: uppercase;
+      color: #f44336 !important;
+      text-decoration: none !important;
+      font-size: 24px;
+      /*margin: 20px;*/
+      font-weight: 300;
+      transition: all .25s;
+      border-bottom: 3px solid #f44336;
+    }
+
+    header li a:hover {
+      display: block;
+      /*padding: 14px 25px 10px 25px;*/
+      text-transform: uppercase;
+      color: #f8982d !important;
+      text-decoration: none !important;
+      font-size: 24px;
+      /*margin: 20px;*/
+      font-weight: 300;
+      transition: all .25s;
+      border-bottom: 3px solid #f8982d;
+    }
+  </style>
 </head>
 <body>
 <header>
-    <ul>
-        <li title="CARL: Analysis Tool for Rocket League">
-            <a href="https://lndrlndr.github.io/">CARL</a>
-        </li>
-        <li title="BARL: Broadcast Assistant for Rocket League">
-            <a href="https://lndrlndr.github.io/BARL-Overlay/">BARL</a>
-        </li>
-        <li title="Overlay Portfolio">
-            <a href="https://lndrlndr.github.io/portfolio/">OVERLAYS</a>
-        </li>
-        <li class="active" title="Clients I have worked with">
-            <a href="https://lndrlndr.github.io/overlays/">CLIENTS</a>
-        </li>
-        
-        <li title="Home"><a href="https://lndrlndr.github.io/lndrlndrlndr">
-            <img style="height: 50px; width: 50px; border-radius: 50%; transform: translateY(-5px)"
-                 alt="LNDRLNDRLNDR" src="https://lndrlndr.github.io/lndrlndrlndr/icon.png"/> </a>
-        </li>
-        
-        <li title="Check out my Twitter">
-            <a target="_blank" href="https://x.com/LNDRLNDRLNDR">TWITTER</a>
-        </li>
-        <li title="Send me an Email">
-            <a target="_blank" href="mailto:lndr.overlays@gmail.com">EMAIL</a>
-        </li>
-        <li title="Join the BARL Discord server">
-            <a target="_blank" href="https://discord.gg/qF5FkJxNdR">DISCORD</a>
-        </li>
-    </ul>
+  <ul>
+    <li title="CARL: Analysis Tool for Rocket League">
+      <a href="https://lndrlndr.github.io/">CARL</a>
+    </li>
+    <li title="BARL: Broadcast Assistant for Rocket League">
+      <a href="https://lndrlndr.github.io/BARL-Overlay/">BARL</a>
+    </li>
+    <li class="active" title="Overlay Portfolio">
+      <a href="https://lndrlndr.github.io/portfolio/">OVERLAYS</a>
+    </li>
+
+    <li title="Home"><a href="https://lndrlndr.github.io/lndrlndrlndr">
+      <img style="height: 50px; width: 50px; border-radius: 50%; transform: translateY(-5px)"
+           alt="LNDRLNDRLNDR" src="https://lndrlndr.github.io/lndrlndrlndr/icon.png"/> </a>
+    </li>
+
+    <li title="Check out my Twitter">
+      <a target="_blank" href="https://x.com/LNDRLNDRLNDR">TWITTER</a>
+    </li>
+    <li title="Send me an Email">
+      <a target="_blank" href="mailto:lndr.overlays@gmail.com">EMAIL</a>
+    </li>
+    <li title="Join the BARL Discord server">
+      <a target="_blank" href="https://discord.gg/qF5FkJxNdR">DISCORD</a>
+    </li>
+  </ul>
+</header>
+
+<header>
+  <ul style="background-color:#1B1B1B;">
+    <li title="Dynamic Overlays Portfolio">
+      <a href="https://lndrlndr.github.io/portfolio">PORTFOLIO</a>
+    </li>
+    <li class="active" title="Dynamic Overlays Clients">
+      <a href="https://lndrlndr.github.io/overlays">CLIENTS</a>
+    </li>
+    <li title="Dynamic Overlays More Information">
+      <a href="https://lndrlndr.github.io/RL-HUD/">INFO</a>
+    </li>
+  </ul>
 </header>
 
 
@@ -207,286 +218,286 @@
 <!--    </nav>-->
 <!--</header>-->
 <main>
-    <h1>Rocket League Dynamic Broadcasting Overlay</h1>
-    <section id="tweets">
-        <!-- Add tweets content here -->
+  <h1>Rocket League Dynamic Broadcasting Overlay</h1>
+  <section id="tweets">
+    <!-- Add tweets content here -->
 
-        <h2>Tweets</h2>
-        <div class="video_box">
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Rocket League Dynamic Overlays: The ultimate tool
-                for easy and professional broadcasting. <br><br>Custom made to fit your brand. <br>Easy to use, so you
-                can focus on what really matters: the game-play.<br><br>Real-time updatable in-game HUD, advanced post
-                game stats &amp; more. <br><br>Discord: lndrlndrlndr
-                <a href="https://t.co/2mgx9cZUed">pic.twitter.com/2mgx9cZUed</a></p>&mdash; LNDR (@LNDRLNDRLNDR) <a
-                    href="https://twitter.com/LNDRLNDRLNDR/status/1625923082643701776?ref_src=twsrc%5Etfw">February 15,
-                2023</a>
-            </blockquote>
+    <h2>Tweets</h2>
+    <div class="video_box">
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Rocket League Dynamic Overlays: The ultimate tool
+        for easy and professional broadcasting. <br><br>Custom made to fit your brand. <br>Easy to use, so you
+        can focus on what really matters: the game-play.<br><br>Real-time updatable in-game HUD, advanced post
+        game stats &amp; more. <br><br>Discord: lndrlndrlndr
+        <a href="https://t.co/2mgx9cZUed">pic.twitter.com/2mgx9cZUed</a></p>&mdash; LNDR (@LNDRLNDRLNDR) <a
+        href="https://twitter.com/LNDRLNDRLNDR/status/1625923082643701776?ref_src=twsrc%5Etfw">February 15,
+        2023</a>
+      </blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I am so thankful that I&#39;m able to work with all
-                these amazing people and organizations to achieve the best dynamic Rocket League overlay possible.
-                Seeing
-                the concepts come to life is so satisfying.<br><br>If you&#39;re interested in commissioning me, slide
-                in my
-                DMs for more info. <a href="https://t.co/5TyPQAgCku">pic.twitter.com/5TyPQAgCku</a></p>&mdash; LNDR
-                (@LNDRLNDRLNDR) <a
-                        href="https://twitter.com/LNDRLNDRLNDR/status/1597319290012635136?ref_src=twsrc%5Etfw">November
-                    28, 2022</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I am so thankful that I&#39;m able to work with all
+        these amazing people and organizations to achieve the best dynamic Rocket League overlay possible.
+        Seeing
+        the concepts come to life is so satisfying.<br><br>If you&#39;re interested in commissioning me, slide
+        in my
+        DMs for more info. <a href="https://t.co/5TyPQAgCku">pic.twitter.com/5TyPQAgCku</a></p>&mdash; LNDR
+        (@LNDRLNDRLNDR) <a
+          href="https://twitter.com/LNDRLNDRLNDR/status/1597319290012635136?ref_src=twsrc%5Etfw">November
+          28, 2022</a>
+      </blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Some more Dynamic Rocket League Overlays, this time
-                in
-                action.<br><br>If you are a caster, producer, coach, ... and are looking for a way to level up your
-                Rocket
-                League, be sure to contact me! I can make literally anything: ingame HUD, stats, brackets, pregame
-                screens,
-                ... <a href="https://t.co/FtB9IoREZh">pic.twitter.com/FtB9IoREZh</a></p>&mdash; LNDR (@LNDRLNDRLNDR) <a
-                    href="https://twitter.com/LNDRLNDRLNDR/status/1585770336024338434?ref_src=twsrc%5Etfw">October 27,
-                2022</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Some more Dynamic Rocket League Overlays, this time
+        in
+        action.<br><br>If you are a caster, producer, coach, ... and are looking for a way to level up your
+        Rocket
+        League, be sure to contact me! I can make literally anything: ingame HUD, stats, brackets, pregame
+        screens,
+        ... <a href="https://t.co/FtB9IoREZh">pic.twitter.com/FtB9IoREZh</a></p>&mdash; LNDR (@LNDRLNDRLNDR) <a
+        href="https://twitter.com/LNDRLNDRLNDR/status/1585770336024338434?ref_src=twsrc%5Etfw">October 27,
+        2022</a>
+      </blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">My latest Rocket League Custom Overlay Projects.
-                <br>Interested
-                in a dynamic unique casting overlay to take your stream or broadcast to the next level? <br><br>You can
-                dm
-                me here or add me on discord LNDR#9833.<br>My portfolio is linked in the comments. <a
-                        href="https://t.co/OkSJXq7eEG">pic.twitter.com/OkSJXq7eEG</a></p>&mdash; LNDR (@LNDRLNDRLNDR) <a
-                    href="https://twitter.com/LNDRLNDRLNDR/status/1569118285832114178?ref_src=twsrc%5Etfw">September 12,
-                2022</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">My latest Rocket League Custom Overlay Projects.
+        <br>Interested
+        in a dynamic unique casting overlay to take your stream or broadcast to the next level? <br><br>You can
+        dm
+        me here or add me on discord LNDR#9833.<br>My portfolio is linked in the comments. <a
+          href="https://t.co/OkSJXq7eEG">pic.twitter.com/OkSJXq7eEG</a></p>&mdash; LNDR (@LNDRLNDRLNDR) <a
+        href="https://twitter.com/LNDRLNDRLNDR/status/1569118285832114178?ref_src=twsrc%5Etfw">September 12,
+        2022</a>
+      </blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Want to take your Rocket League broadcast to the
-                next
-                level? <br>Happy to announce I now offer custom dynamic overlays.<br>Interested? DM me or message me on
-                Discord LNDR#9833. <a href="https://t.co/YljmQCFm1L">https://t.co/YljmQCFm1L</a></p>&mdash; LNDR
-                (@LNDRLNDRLNDR) <a
-                        href="https://twitter.com/LNDRLNDRLNDR/status/1562903178886017024?ref_src=twsrc%5Etfw">August
-                    25, 2022</a></blockquote>
-        </div>
-    </section>
-    <section id="clients">
-        <!-- Add clients content here -->
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Want to take your Rocket League broadcast to the
+        next
+        level? <br>Happy to announce I now offer custom dynamic overlays.<br>Interested? DM me or message me on
+        Discord LNDR#9833. <a href="https://t.co/YljmQCFm1L">https://t.co/YljmQCFm1L</a></p>&mdash; LNDR
+        (@LNDRLNDRLNDR) <a
+          href="https://twitter.com/LNDRLNDRLNDR/status/1562903178886017024?ref_src=twsrc%5Etfw">August
+          25, 2022</a></blockquote>
+    </div>
+  </section>
+  <section id="clients">
+    <!-- Add clients content here -->
 
-        <h2>Clients</h2>
-        <div class="video_box">
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">If you want an overlay for your stream, I can't
-                recommend <a href="https://twitter.com/LNDRLNDRLNDR?ref_src=twsrc%5Etfw">@LNDRLNDRLNDR</a>
-                enough.<br><br>He
-                will get you exactly what you want.<br><br>Hit him up on discord.<br>Discord: LNDR#9833<br><br>Examples
-                (including the stuff he made for me):<a href="https://t.co/u8F0jqJPmJ">https://t.co/u8F0jqJPmJ</a></p>&mdash;
-                Feer (@FeerTwitch) <a
-                        href="https://twitter.com/FeerTwitch/status/1615395607233040386?ref_src=twsrc%5Etfw">January
-                    17, 2023</a></blockquote>
+    <h2>Clients</h2>
+    <div class="video_box">
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">If you want an overlay for your stream, I can't
+        recommend <a href="https://twitter.com/LNDRLNDRLNDR?ref_src=twsrc%5Etfw">@LNDRLNDRLNDR</a>
+        enough.<br><br>He
+        will get you exactly what you want.<br><br>Hit him up on discord.<br>Discord: LNDR#9833<br><br>Examples
+        (including the stuff he made for me):<a href="https://t.co/u8F0jqJPmJ">https://t.co/u8F0jqJPmJ</a></p>&mdash;
+        Feer (@FeerTwitch) <a
+          href="https://twitter.com/FeerTwitch/status/1615395607233040386?ref_src=twsrc%5Etfw">January
+          17, 2023</a></blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Getting ready for the <a
-                    href="https://twitter.com/CollegeCarball?ref_src=twsrc%5Etfw">@CollegeCarball</a> qualifier on
-                Sunday
-                with some scrim action vs <a href="https://twitter.com/VWUEsports?ref_src=twsrc%5Etfw">@VWUEsports</a>!
-                <br><br>Shoutout
-                to <a href="https://twitter.com/LNDRLNDRLNDR?ref_src=twsrc%5Etfw">@LNDRLNDRLNDR</a> for the awesome
-                overlays, to make our RL streams and practices better! <a href="https://t.co/JWRbKjwQUu">pic.twitter.com/JWRbKjwQUu</a>
-            </p>&mdash; Carthage Esports (@CarthageEsports) <a
-                    href="https://twitter.com/CarthageEsports/status/1612593149506981889?ref_src=twsrc%5Etfw">January 9,
-                2023</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Getting ready for the <a
+        href="https://twitter.com/CollegeCarball?ref_src=twsrc%5Etfw">@CollegeCarball</a> qualifier on
+        Sunday
+        with some scrim action vs <a href="https://twitter.com/VWUEsports?ref_src=twsrc%5Etfw">@VWUEsports</a>!
+        <br><br>Shoutout
+        to <a href="https://twitter.com/LNDRLNDRLNDR?ref_src=twsrc%5Etfw">@LNDRLNDRLNDR</a> for the awesome
+        overlays, to make our RL streams and practices better! <a href="https://t.co/JWRbKjwQUu">pic.twitter.com/JWRbKjwQUu</a>
+      </p>&mdash; Carthage Esports (@CarthageEsports) <a
+        href="https://twitter.com/CarthageEsports/status/1612593149506981889?ref_src=twsrc%5Etfw">January 9,
+        2023</a>
+      </blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Excited to announce that the <a
-                    href="https://twitter.com/hashtag/BTB?src=hash&amp;ref_src=twsrc%5Etfw">#BTB</a> will be debuting
-                the
-                new overlay from <a href="https://twitter.com/LNDRLNDRLNDR?ref_src=twsrc%5Etfw">@LNDRLNDRLNDR</a> !!! We&#39;re
-                super stoked about this, and can&#39;t wait to use it!<br><br>(<a
-                        href="https://twitter.com/jeremywalker71?ref_src=twsrc%5Etfw">@jeremywalker71</a> will also be
-                using
-                this on his personal casting sessions hint hint <a
-                        href="https://twitter.com/PremierCS_RL?ref_src=twsrc%5Etfw">@PremierCS_RL</a> EU players) <a
-                        href="https://t.co/bko0KdDP1K">pic.twitter.com/bko0KdDP1K</a></p>&mdash; Flying Circus
-                (@flyingcircus_RL) <a
-                        href="https://twitter.com/flyingcircus_RL/status/1611362078651990019?ref_src=twsrc%5Etfw">January
-                    6,
-                    2023</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Excited to announce that the <a
+        href="https://twitter.com/hashtag/BTB?src=hash&amp;ref_src=twsrc%5Etfw">#BTB</a> will be debuting
+        the
+        new overlay from <a href="https://twitter.com/LNDRLNDRLNDR?ref_src=twsrc%5Etfw">@LNDRLNDRLNDR</a> !!! We&#39;re
+        super stoked about this, and can&#39;t wait to use it!<br><br>(<a
+          href="https://twitter.com/jeremywalker71?ref_src=twsrc%5Etfw">@jeremywalker71</a> will also be
+        using
+        this on his personal casting sessions hint hint <a
+          href="https://twitter.com/PremierCS_RL?ref_src=twsrc%5Etfw">@PremierCS_RL</a> EU players) <a
+          href="https://t.co/bko0KdDP1K">pic.twitter.com/bko0KdDP1K</a></p>&mdash; Flying Circus
+        (@flyingcircus_RL) <a
+          href="https://twitter.com/flyingcircus_RL/status/1611362078651990019?ref_src=twsrc%5Etfw">January
+          6,
+          2023</a>
+      </blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Done another production from <a
-                    href="https://twitter.com/hashtag/RocketLeague?src=hash&amp;ref_src=twsrc%5Etfw">#RocketLeague</a>.
-                So
-                proud of the product we made.<br><br>Continue growing &amp; learning.<br><br>Shout out to <a
-                        href="https://twitter.com/LNDRLNDRLNDR?ref_src=twsrc%5Etfw">@LNDRLNDRLNDR</a> for the overlay in
-                game.<a href="https://twitter.com/hashtag/esports?src=hash&amp;ref_src=twsrc%5Etfw">#esports</a> <a
-                        href="https://twitter.com/hashtag/production?src=hash&amp;ref_src=twsrc%5Etfw">#production</a>
-                <a
-                        href="https://twitter.com/hashtag/broadcast?src=hash&amp;ref_src=twsrc%5Etfw">#broadcast</a> <a
-                        href="https://t.co/NxnBlQXBnA">pic.twitter.com/NxnBlQXBnA</a></p>&mdash; {KouteV} (@KouteV) <a
-                    href="https://twitter.com/KouteV/status/1593065295455080448?ref_src=twsrc%5Etfw">November 17,
-                2022</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Done another production from <a
+        href="https://twitter.com/hashtag/RocketLeague?src=hash&amp;ref_src=twsrc%5Etfw">#RocketLeague</a>.
+        So
+        proud of the product we made.<br><br>Continue growing &amp; learning.<br><br>Shout out to <a
+          href="https://twitter.com/LNDRLNDRLNDR?ref_src=twsrc%5Etfw">@LNDRLNDRLNDR</a> for the overlay in
+        game.<a href="https://twitter.com/hashtag/esports?src=hash&amp;ref_src=twsrc%5Etfw">#esports</a> <a
+          href="https://twitter.com/hashtag/production?src=hash&amp;ref_src=twsrc%5Etfw">#production</a>
+        <a
+          href="https://twitter.com/hashtag/broadcast?src=hash&amp;ref_src=twsrc%5Etfw">#broadcast</a> <a
+          href="https://t.co/NxnBlQXBnA">pic.twitter.com/NxnBlQXBnA</a></p>&mdash; {KouteV} (@KouteV) <a
+        href="https://twitter.com/KouteV/status/1593065295455080448?ref_src=twsrc%5Etfw">November 17,
+        2022</a>
+      </blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">If you want to up your quality of your broadcast
-                overlays, can&#39;t recommend this guy enough.<br><br>He has really quick response times to any
-                questions
-                you have in your mind, extremely high quality on the overlays and bunch of past experience with coding
-                and
-                making these overlays. <a href="https://t.co/JdDOyhoySL">https://t.co/JdDOyhoySL</a></p>&mdash; Renshiro
-                (@Renshiro_RL) <a href="https://twitter.com/Renshiro_RL/status/1634917168478568450?ref_src=twsrc%5Etfw">March
-                    12, 2023</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">If you want to up your quality of your broadcast
+        overlays, can&#39;t recommend this guy enough.<br><br>He has really quick response times to any
+        questions
+        you have in your mind, extremely high quality on the overlays and bunch of past experience with coding
+        and
+        making these overlays. <a href="https://t.co/JdDOyhoySL">https://t.co/JdDOyhoySL</a></p>&mdash; Renshiro
+        (@Renshiro_RL) <a href="https://twitter.com/Renshiro_RL/status/1634917168478568450?ref_src=twsrc%5Etfw">March
+          12, 2023</a>
+      </blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">LNDR recently just finished a custom dynamic
-                overlay
-                for Lebanon Valley College’s broadcast. If you are interested in a custom overlay, us here at <a
-                        href="https://twitter.com/LVC_esports?ref_src=twsrc%5Etfw">@LVC_esports</a> highly recommend <a
-                        href="https://twitter.com/LNDRLNDRLNDR?ref_src=twsrc%5Etfw">@LNDRLNDRLNDR</a> for the job. We
-                will
-                be showing off his finished product on our stream tmr for our match <a href="https://t.co/7DxSwIuPg4">https://t.co/7DxSwIuPg4</a>
-            </p>&mdash; Frencheii (@Frencheii_) <a
-                    href="https://twitter.com/Frencheii_/status/1626289788360720387?ref_src=twsrc%5Etfw">February 16,
-                2023</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">LNDR recently just finished a custom dynamic
+        overlay
+        for Lebanon Valley College’s broadcast. If you are interested in a custom overlay, us here at <a
+          href="https://twitter.com/LVC_esports?ref_src=twsrc%5Etfw">@LVC_esports</a> highly recommend <a
+          href="https://twitter.com/LNDRLNDRLNDR?ref_src=twsrc%5Etfw">@LNDRLNDRLNDR</a> for the job. We
+        will
+        be showing off his finished product on our stream tmr for our match <a href="https://t.co/7DxSwIuPg4">https://t.co/7DxSwIuPg4</a>
+      </p>&mdash; Frencheii (@Frencheii_) <a
+        href="https://twitter.com/Frencheii_/status/1626289788360720387?ref_src=twsrc%5Etfw">February 16,
+        2023</a>
+      </blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hard vouch for LNDR&#39;s work. Any orgs in need of
-                a
-                custom dynamic overlay should look no further.<br><br>Tune in to the <a
-                        href="https://twitter.com/PioneersGG?ref_src=twsrc%5Etfw">@PioneersGG</a> x <a
-                        href="https://twitter.com/RankedHoops?ref_src=twsrc%5Etfw">@RankedHoops</a> tournament tomorrow
-                at 4
-                pacific / 7 eastern to see what we&#39;ve been cooking up! <a href="https://t.co/3e70qcfB0f">https://t.co/3e70qcfB0f</a>
-            </p>&mdash; Mr. Swaggles (@RH_MrSwaggles) <a
-                    href="https://twitter.com/RH_MrSwaggles/status/1603812605797158912?ref_src=twsrc%5Etfw">December 16,
-                2022</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hard vouch for LNDR&#39;s work. Any orgs in need of
+        a
+        custom dynamic overlay should look no further.<br><br>Tune in to the <a
+          href="https://twitter.com/PioneersGG?ref_src=twsrc%5Etfw">@PioneersGG</a> x <a
+          href="https://twitter.com/RankedHoops?ref_src=twsrc%5Etfw">@RankedHoops</a> tournament tomorrow
+        at 4
+        pacific / 7 eastern to see what we&#39;ve been cooking up! <a href="https://t.co/3e70qcfB0f">https://t.co/3e70qcfB0f</a>
+      </p>&mdash; Mr. Swaggles (@RH_MrSwaggles) <a
+        href="https://twitter.com/RH_MrSwaggles/status/1603812605797158912?ref_src=twsrc%5Etfw">December 16,
+        2022</a>
+      </blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="pt" dir="ltr">Para quem tá precisando de uma overlay automatizada
-                BOA
-                para Rocket League, recomendo demais!<br><br>Contratamos para <a
-                        href="https://twitter.com/UniFlickRL?ref_src=twsrc%5Etfw">@uniflickRL</a> e é incrível como
-                subiu o
-                nível de qualidade da transmissão!<br><br>Indico DEMAIS! <a href="https://t.co/1HI2M6j7Cu">https://t.co/1HI2M6j7Cu</a>
-            </p>&mdash; ThiagoBFM (@thiagobfm) <a
-                    href="https://twitter.com/thiagobfm/status/1597216120251232256?ref_src=twsrc%5Etfw">November 28,
-                2022</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="pt" dir="ltr">Para quem tá precisando de uma overlay automatizada
+        BOA
+        para Rocket League, recomendo demais!<br><br>Contratamos para <a
+          href="https://twitter.com/UniFlickRL?ref_src=twsrc%5Etfw">@uniflickRL</a> e é incrível como
+        subiu o
+        nível de qualidade da transmissão!<br><br>Indico DEMAIS! <a href="https://t.co/1HI2M6j7Cu">https://t.co/1HI2M6j7Cu</a>
+      </p>&mdash; ThiagoBFM (@thiagobfm) <a
+        href="https://twitter.com/thiagobfm/status/1597216120251232256?ref_src=twsrc%5Etfw">November 28,
+        2022</a>
+      </blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">If anyone is looking for quality and I&#39;m
-                talking
-                quality Rocket League overlays for castings hit LNDR up <a href="https://t.co/NKmr5Xerwg">https://t.co/NKmr5Xerwg</a>
-            </p>&mdash; AST | RedFalconSS (Competing Arc) (@RedFalcon_SS) <a
-                    href="https://twitter.com/RedFalcon_SS/status/1586996005282668544?ref_src=twsrc%5Etfw">October 31,
-                2022</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">If anyone is looking for quality and I&#39;m
+        talking
+        quality Rocket League overlays for castings hit LNDR up <a href="https://t.co/NKmr5Xerwg">https://t.co/NKmr5Xerwg</a>
+      </p>&mdash; AST | RedFalconSS (Competing Arc) (@RedFalcon_SS) <a
+        href="https://twitter.com/RedFalcon_SS/status/1586996005282668544?ref_src=twsrc%5Etfw">October 31,
+        2022</a>
+      </blockquote>
 
 
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Are you trying to improve your <a
-                    href="https://twitter.com/hashtag/RocketLeague?src=hash&amp;ref_src=twsrc%5Etfw">#RocketLeague</a>
-                Broadcast? Please put in contact with <a href="https://twitter.com/LNDRLNDRLNDR?ref_src=twsrc%5Etfw">@LNDRLNDRLNDR</a>
-                📥. Full personalized overlays + whatever you want to show on your livestream. You don&#39;t get anywhere
-                the
-                dedication + support this guy put into his work. Fully recommend ✅🚗⚡️ <a href="https://t.co/WGZBxyCzLZ">https://t.co/WGZBxyCzLZ</a>
-            </p>&mdash; {KouteV} (@KouteV) <a
-                    href="https://twitter.com/KouteV/status/1578084773007851527?ref_src=twsrc%5Etfw">October 6, 2022</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Are you trying to improve your <a
+        href="https://twitter.com/hashtag/RocketLeague?src=hash&amp;ref_src=twsrc%5Etfw">#RocketLeague</a>
+        Broadcast? Please put in contact with <a href="https://twitter.com/LNDRLNDRLNDR?ref_src=twsrc%5Etfw">@LNDRLNDRLNDR</a>
+        📥. Full personalized overlays + whatever you want to show on your livestream. You don&#39;t get anywhere
+        the
+        dedication + support this guy put into his work. Fully recommend ✅🚗⚡️ <a href="https://t.co/WGZBxyCzLZ">https://t.co/WGZBxyCzLZ</a>
+      </p>&mdash; {KouteV} (@KouteV) <a
+        href="https://twitter.com/KouteV/status/1578084773007851527?ref_src=twsrc%5Etfw">October 6, 2022</a>
+      </blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="it" dir="ltr">Per la finale <a
-                    href="https://twitter.com/IRC_RL?ref_src=twsrc%5Etfw">@IRC_RL</a> in Milan Games Week, ho lavorato a
-                stretto contatto con il ragazzo in questione per portare una piccola sorpresa in broadcast 👀<br><br>Spero
-                sia stata apprezzata tanto quanto ho apprezzato lavorare con lui! <a href="https://t.co/k15AemwPnu">https://t.co/k15AemwPnu</a>
-            </p>&mdash; Marco Scarfone (@DisfactS1) <a
-                    href="https://twitter.com/DisfactS1/status/1597331814133075968?ref_src=twsrc%5Etfw">November 28,
-                2022</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="it" dir="ltr">Per la finale <a
+        href="https://twitter.com/IRC_RL?ref_src=twsrc%5Etfw">@IRC_RL</a> in Milan Games Week, ho lavorato a
+        stretto contatto con il ragazzo in questione per portare una piccola sorpresa in broadcast 👀<br><br>Spero
+        sia stata apprezzata tanto quanto ho apprezzato lavorare con lui! <a href="https://t.co/k15AemwPnu">https://t.co/k15AemwPnu</a>
+      </p>&mdash; Marco Scarfone (@DisfactS1) <a
+        href="https://twitter.com/DisfactS1/status/1597331814133075968?ref_src=twsrc%5Etfw">November 28,
+        2022</a>
+      </blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I get asked quite often where to get overlays from,
-                and this person looks legit! Great resource. <a
-                        href="https://t.co/gNPKOJ5Uf5">https://t.co/gNPKOJ5Uf5</a></p>&mdash; Britton (@BrittonShink) <a
-                    href="https://twitter.com/BrittonShink/status/1586051954245271553?ref_src=twsrc%5Etfw">October 28,
-                2022</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I get asked quite often where to get overlays from,
+        and this person looks legit! Great resource. <a
+          href="https://t.co/gNPKOJ5Uf5">https://t.co/gNPKOJ5Uf5</a></p>&mdash; Britton (@BrittonShink) <a
+        href="https://twitter.com/BrittonShink/status/1586051954245271553?ref_src=twsrc%5Etfw">October 28,
+        2022</a>
+      </blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">This guy is beyond easy to work with and my streams
-                look incredible, and great after sales to sort out any teething issues! And I&#39;m going back soon for
-                upgrades! Not everything needs to be at once! <a
-                        href="https://t.co/s7hQMsMmhG">https://t.co/s7hQMsMmhG</a></p>&mdash; jeremy (@jeremywalker71)
-                <a href="https://twitter.com/jeremywalker71/status/1626272736552054787?ref_src=twsrc%5Etfw">February 16,
-                    2023</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">This guy is beyond easy to work with and my streams
+        look incredible, and great after sales to sort out any teething issues! And I&#39;m going back soon for
+        upgrades! Not everything needs to be at once! <a
+          href="https://t.co/s7hQMsMmhG">https://t.co/s7hQMsMmhG</a></p>&mdash; jeremy (@jeremywalker71)
+        <a href="https://twitter.com/jeremywalker71/status/1626272736552054787?ref_src=twsrc%5Etfw">February 16,
+          2023</a>
+      </blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Helped me make my casts look professional. Easy to
-                work with and a ton of customization. Def hit up LNDR for an overlay. <a href="https://t.co/6MNrD5virZ">https://t.co/6MNrD5virZ</a>
-            </p>&mdash; Croptopolis (@Croptopolis) <a
-                    href="https://twitter.com/Croptopolis/status/1625924193513775106?ref_src=twsrc%5Etfw">February 15,
-                2023</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Helped me make my casts look professional. Easy to
+        work with and a ton of customization. Def hit up LNDR for an overlay. <a href="https://t.co/6MNrD5virZ">https://t.co/6MNrD5virZ</a>
+      </p>&mdash; Croptopolis (@Croptopolis) <a
+        href="https://twitter.com/Croptopolis/status/1625924193513775106?ref_src=twsrc%5Etfw">February 15,
+        2023</a>
+      </blockquote>
 
-            <blockquote class="twitter-tweet"><p lang="en" dir="ltr">We are very excited to show off our new overlay
-                tomorrow! Huge huge shoutout to <a href="https://twitter.com/LNDRLNDRLNDR?ref_src=twsrc%5Etfw">@LNDRLNDRLNDR</a>
-                for this one! It come out amazing! <a href="https://t.co/fbnSbVH2fn">https://t.co/fbnSbVH2fn</a></p>&mdash;
-                LVC Esports (@LVC_esports) <a
-                        href="https://twitter.com/LVC_esports/status/1626292092459778049?ref_src=twsrc%5Etfw">
-                    February 16, 2023</a>
-            </blockquote>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">We are very excited to show off our new overlay
+        tomorrow! Huge huge shoutout to <a href="https://twitter.com/LNDRLNDRLNDR?ref_src=twsrc%5Etfw">@LNDRLNDRLNDR</a>
+        for this one! It come out amazing! <a href="https://t.co/fbnSbVH2fn">https://t.co/fbnSbVH2fn</a></p>&mdash;
+        LVC Esports (@LVC_esports) <a
+          href="https://twitter.com/LVC_esports/status/1626292092459778049?ref_src=twsrc%5Etfw">
+          February 16, 2023</a>
+      </blockquote>
 
-        </div>
-    </section>
-    <!--    <section id="contact">-->
-    <!--        &lt;!&ndash; Add contact content here &ndash;&gt;-->
+    </div>
+  </section>
+  <!--    <section id="contact">-->
+  <!--        &lt;!&ndash; Add contact content here &ndash;&gt;-->
 
-    <!--        <h2>Contact information</h2>-->
-    <!--        <p>Discord: lndrlndrlndr</p>-->
-    <!--        <p>Twitter: @LNDRLNDRLNDR</p>-->
-    <!--        <p>Mail: lndr.overlays@gmail.com</p>-->
-    <!--    </section>-->
-    <section id="info">
-        <!-- Add info content here -->
+  <!--        <h2>Contact information</h2>-->
+  <!--        <p>Discord: lndrlndrlndr</p>-->
+  <!--        <p>Twitter: @LNDRLNDRLNDR</p>-->
+  <!--        <p>Mail: lndr.overlays@gmail.com</p>-->
+  <!--    </section>-->
+  <section id="info">
+    <!-- Add info content here -->
 
-        <h2>Rocket League Dynamic Overlay HUD</h2>
-        <p>The esports scene of Rocket League has come a long way. With millions of players and a thriving competitive
-            scene, it's become one of the most popular games on the market. But with so many people streaming and
-            watching Rocket League matches, it can be hard to stand out from the crowd.</p>
+    <h2>Rocket League Dynamic Overlay HUD</h2>
+    <p>The esports scene of Rocket League has come a long way. With millions of players and a thriving competitive
+      scene, it's become one of the most popular games on the market. But with so many people streaming and
+      watching Rocket League matches, it can be hard to stand out from the crowd.</p>
 
-        <p>That's where the Rocket League Dynamic Overlay HUD comes in. By adding a dynamic overlay to your stream, you
-            can create a more professional and engaging viewing experience for your audience. The overlay will display
-            key information about the match, including the score, timer, and team names, so viewers always know what's
-            happening. And because the overlay is fully automated, it frees up the casters to focus on the gameplay,
-            rather than worrying about the technical details of the stream.</p>
+    <p>That's where the Rocket League Dynamic Overlay HUD comes in. By adding a dynamic overlay to your stream, you
+      can create a more professional and engaging viewing experience for your audience. The overlay will display
+      key information about the match, including the score, timer, and team names, so viewers always know what's
+      happening. And because the overlay is fully automated, it frees up the casters to focus on the gameplay,
+      rather than worrying about the technical details of the stream.</p>
 
-        <p>But why choose the Rocket League Dynamic Overlay HUD from lndrlndrlndr? For one thing, our overlays are fully
-            customizable, so you can choose the colors, fonts, and other details that match your brand. And because we
-            use the latest coding techniques, our overlays are always up-to-date and work with every streaming
-            platform.</p>
+    <p>But why choose the Rocket League Dynamic Overlay HUD from lndrlndrlndr? For one thing, our overlays are fully
+      customizable, so you can choose the colors, fonts, and other details that match your brand. And because we
+      use the latest coding techniques, our overlays are always up-to-date and work with every streaming
+      platform.</p>
 
-        <h2>Get a Custom Dynamic Overlay for Rocket League</h2>
-        <p>If you're ready to take your Rocket League stream to the next level, lndrlndrlndr can help. We specialize in
-            creating custom dynamic overlays for Rocket League matches, designed to make your stream stand out from the
-            crowd.</p>
+    <h2>Get a Custom Dynamic Overlay for Rocket League</h2>
+    <p>If you're ready to take your Rocket League stream to the next level, lndrlndrlndr can help. We specialize in
+      creating custom dynamic overlays for Rocket League matches, designed to make your stream stand out from the
+      crowd.</p>
 
-        <p>So how does it work? First, we'll work with you to understand your needs and your brand. Then, we'll create a
-            custom overlay that matches your specifications, including the score, timer, team names, and any other
-            information you need to display. Finally, we'll provide you with the overlay code and any necessary
-            instructions, so you can start using it right away.</p>
+    <p>So how does it work? First, we'll work with you to understand your needs and your brand. Then, we'll create a
+      custom overlay that matches your specifications, including the score, timer, team names, and any other
+      information you need to display. Finally, we'll provide you with the overlay code and any necessary
+      instructions, so you can start using it right away.</p>
 
-        <p>And don't worry about the cost - lndrlndrlndr can create an overlay for any budget. Whether you're a
-            professional esports organization or a small streamer just starting out, we can help you create a more
-            engaging and professional viewing experience for your audience.</p>
+    <p>And don't worry about the cost - lndrlndrlndr can create an overlay for any budget. Whether you're a
+      professional esports organization or a small streamer just starting out, we can help you create a more
+      engaging and professional viewing experience for your audience.</p>
 
-    </section>
+  </section>
 
-    <div style="height: 35px;"></div>
+  <div style="height: 35px;"></div>
 
 </main>
 <a id="scroll-to-top" href="#" class="btn-floating btn-large waves-effect waves-light red">
-    <i class="material-icons">arrow_upward</i>
+  <i class="material-icons">arrow_upward</i>
 </a>
 
 <footer>
-    <ul>
-        Contact:
-        <li title="Follow me on Twitter">
-            Twitter: <a target="_blank" href="https://x.com/LNDRLNDRLNDR">@LNDRLNDRLNDR</a>
-        </li>
-        <li title="Send me an Email">
-            Email: <a target="_blank" href="mailto:lndr.overlays@gmail.com">lndr.overlays@gmail.com</a>
-        </li>
-        <li title="Talk to me on Discord">
-            Discord: <a target="_blank" href="https://discord.gg/qF5FkJxNdR">lndrlndrlndr</a>
-        </li>
-    </ul>
+  <ul>
+    Contact:
+    <li title="Follow me on Twitter">
+      Twitter: <a target="_blank" href="https://x.com/LNDRLNDRLNDR">@LNDRLNDRLNDR</a>
+    </li>
+    <li title="Send me an Email">
+      Email: <a target="_blank" href="mailto:lndr.overlays@gmail.com">lndr.overlays@gmail.com</a>
+    </li>
+    <li title="Talk to me on Discord">
+      Discord: <a target="_blank" href="https://discord.gg/qF5FkJxNdR">lndrlndrlndr</a>
+    </li>
+  </ul>
 </footer>
 <!-- Add JavaScript file here -->
 <script>
